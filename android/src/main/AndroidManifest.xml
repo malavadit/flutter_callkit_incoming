@@ -68,13 +68,12 @@
         </receiver>
 
         <service
-            android:name="com.hiennv.flutter_callkit_incoming.CallkitSoundPlayerService"
+            android:name="com.hiennv.flutter_callkit_incoming.CallkitNotificationService"
             android:enabled="true"
             android:exported="true"
             android:stopWithTask="false"
             android:foregroundServiceType="phoneCall|microphone|camera"
-            android:permission="${applicationId}.PERMISSION_CALL"
-            android:name="com.hiennv.flutter_callkit_incoming.CallkitNotificationService">
+            android:permission="${applicationId}.PERMISSION_CALL">
         </service>
 
         <service
@@ -86,7 +85,6 @@
                 <action android:name="android.telecom.ConnectionService" />
             </intent-filter>
         </service>
-            android:exported="true" />
 
     </application>
 </manifest>
