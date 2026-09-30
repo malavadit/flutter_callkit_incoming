@@ -347,8 +347,7 @@ public class Call: NSObject {
             "headers": headers,
             "ios": ios,
             "missedCallNotification": missedCallNotification,
-            "callingNotification": callingNotification
-            "ios": ios,
+            "callingNotification": callingNotification,
             "isOutGoing": isOutGoing
         ]
         return map
