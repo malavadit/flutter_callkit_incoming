@@ -174,7 +174,6 @@ class HomePageState extends State<HomePage> {
         ios: const IOSParams(
           iconName: 'CallKitLogo',
           handleType: 'generic',
-          handleType: '',
           supportsVideo: false,
           maximumCallGroups: 2,
           maximumCallsPerCallGroup: 2,
@@ -238,8 +237,8 @@ class HomePageState extends State<HomePage> {
   Future<void> listenerEvent(void Function(CallEvent?) callback) async {
     try {
       FlutterCallkitIncoming.onEvent.listen((event) async {
-        print("FlutterCallkitIncoming Event ${event!.event}");
-        print("FlutterCallkitIncoming Body ${event.body}");
+        // print("FlutterCallkitIncoming Event ${event!.event}");
+        // print("FlutterCallkitIncoming Body ${event.body}");
         print('HOME: $event');
         switch (event) {
           case CallEventActionCallIncoming():

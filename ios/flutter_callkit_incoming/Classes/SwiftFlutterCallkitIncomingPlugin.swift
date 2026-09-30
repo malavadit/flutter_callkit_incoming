@@ -131,12 +131,12 @@ public class SwiftFlutterCallkitIncomingPlugin: NSObject, FlutterPlugin, CXProvi
             result(true)
             break
         case "endCall":
-            guard let args = call.arguments else {
+            guard let args = call.arguments as? [String: Any] else {
                 result(true)
                 return
             }
-            let endData = Data(args: getArgs)
-            if let reason = getArgs["endCallReason"] as? Int {
+            let endData = Data(args: args)
+            if let reason = args["endCallReason"] as? Int {
                 self.saveEndCall(endData.uuid, reason)
             }
             self.endCall(endData)
@@ -178,11 +178,11 @@ public class SwiftFlutterCallkitIncomingPlugin: NSObject, FlutterPlugin, CXProvi
             result(true)
             break
         case "callConnected":
-             guard let args = call.arguments else {
+             guard let args = call.arguments as? [String: Any] else {
                 result(true)
                 return
             }
-            let connectData = Data(args: getArgs)
+            let connectData = Data(args: args)
             self.connectedCall(connectData)
             self.isFromPushKit = false
             result(true)
